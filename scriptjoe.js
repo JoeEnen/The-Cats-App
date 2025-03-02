@@ -12,11 +12,10 @@ async function fetchCatFacts() {
         displayError("Enter a valid number!");
         return;
     }
-
     try {
         const response = await fetch(`https://meowfacts.herokuapp.com/?count=${numFacts}`);
         const data = await response.json();
-        
+
         if (data && data.data) {
             const factsList = `<ol>` + data.data.map(fact => `<li>${fact}</li>`).join("") + `</ol>`;
             outcomesArea.innerHTML = factsList;
@@ -34,11 +33,9 @@ async function fetchCatPhotos() {
         displayError("Enter a valid number!");
         return;
     }
-
     try {
         const response = await fetch(`https://api.thecatapi.com/v1/images/search?limit=${numPhotos}`);
         const data = await response.json();
-        
         if (data) {
             outcomesArea.innerHTML = data.map(cat => `<img src="${cat.url}" alt="Cat Photo" style="width: 30rem; height: 31.5rem; margin: 1rem;">`).join("");
         }
