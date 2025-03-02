@@ -4,7 +4,6 @@ document.getElementById("outcomesArea")
 
 const outcomesArea = document.getElementById("outcomesArea");
 
-// Fetch Cat Facts
 async function fetchCatFacts() {
     const factsInput = document.getElementById("catFacts").value;
     const numFacts = parseInt(factsInput);
@@ -27,7 +26,6 @@ async function fetchCatFacts() {
     }
 }
 
-// Fetch Cat Photos
 async function fetchCatPhotos() {
     const photosInput = document.getElementById("catPhotos").value;
     const numPhotos = parseInt(photosInput);
@@ -49,7 +47,6 @@ async function fetchCatPhotos() {
     }
 }
 
-// Function to Display Error Message (Replaces previous content)
 function displayError(message) {
     outcomesArea.innerHTML = `<p  style="color: red;  text-align: center;font-size: 3rem;">${message}</p>`;
 }
